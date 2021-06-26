@@ -217,17 +217,17 @@
              - name: AZP_URL
                valueFrom:
                  secretKeyRef:
-                   name: azdevops
+                   name: azdevops-agent
                    key: AZP_URL
              - name: AZP_TOKEN
                valueFrom:
                  secretKeyRef:
-                   name: azdevops
+                   name: azdevops-agent
                    key: AZP_TOKEN
              - name: AZP_POOL
                valueFrom:
                  secretKeyRef:
-                   name: azdevops
+                   name: azdevops-agent
                    key: AZP_POOL
            volumeMounts:
            - mountPath: /var/run/docker.sock #Docker within a Docker container
