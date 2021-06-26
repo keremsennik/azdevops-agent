@@ -162,7 +162,7 @@
    docker-compose up -d --build
    ```
 
-## Kubernetes
+## Kubernetes - AKS
 
 1. Build image:
 
