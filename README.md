@@ -173,7 +173,7 @@
 2. Create the secrets on the AKS cluster.
 
    ```shell
-   # Azure DevOps pat token user needs Manage permissions for this agent pool
+   # Azure DevOps pat user needs Manage permissions for the agent pool
    kubectl create secret generic azdevops-agent \
      --from-literal=AZP_URL=https://dev.azure.com/yourOrg \
      --from-literal=AZP_TOKEN=YourPAT \
