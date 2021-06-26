@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  azdevops-agent:
+    build: .
+    image: azdevops-agent
+    container_name: azdevops-agent
+    environment:
+      - AZP_URL=https://dev.azure.com/{your-organization}
+        AZP_TOKEN={pat-token}
+        AZP_POOL={agent-pool}
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock #Docker within a Docker container
+    restart: always
