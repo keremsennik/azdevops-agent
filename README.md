@@ -168,10 +168,12 @@
 
    ```shell
    docker build -t azdevops-agent:latest .
+   docker image tag azdevops-agent <acr-server>/azdevops-agent
    ```
 2. Create the secrets on the AKS cluster.
 
    ```shell
+   # Azure DevOps pat token user needs Manage permissions for this agent pool
    kubectl create secret generic azdevops-agent \
      --from-literal=AZP_URL=https://dev.azure.com/yourOrg \
      --from-literal=AZP_TOKEN=YourPAT \
@@ -181,6 +183,7 @@
 2. Run this command to push your container to Container Registry:
 
    ```shell
+   docker login <acr-server> --username <acr-username> --password-stdin
    docker push <acr-server>/azdevops-agent:latest
    ```
 
