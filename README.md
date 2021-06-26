@@ -164,7 +164,12 @@
 
 ## Kubernetes
 
-1. Create the secrets on the AKS cluster.
+1. Build image:
+
+   ```shell
+   docker build -t azdevops-agent:latest .
+   ```
+2. Create the secrets on the AKS cluster.
 
    ```shell
    kubectl create secret generic azdevops-agent \
